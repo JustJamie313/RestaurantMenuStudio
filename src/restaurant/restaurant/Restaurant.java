@@ -23,6 +23,9 @@ public class Restaurant {
         //attempt to add same item a second time - outputs "Menu already contains <item description>"
         menu.addMenuItem(1.99,"Houses Salad","appetizer",false);
 
+        //display full menu again to verify item added only once
+        menu.displayCompleteMenu();
+
         //display single menu item
         menu.displayMenuItem("Apple Pie");
 
