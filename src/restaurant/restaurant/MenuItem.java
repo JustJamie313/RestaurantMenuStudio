@@ -1,40 +1,41 @@
 package restaurant;
 
-import java.util.Objects;
-
 public class MenuItem {
+    //fields
+    private Double price;
+    private String description;
+    private String category;
+    private Boolean isNew;
+
+    //getters
     public Double getPrice() {
         return price;
     }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
     public String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getCategory() {
         return category;
     }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     public Boolean getNew() {
         return isNew;
     }
 
+    //setters
+    public void setPrice(Double aPrice) {
+        this.price = aPrice;
+    }
+    public void setDescription(String aDescription) {
+        this.description = aDescription;
+    }
+    public void setCategory(String aCategory) {
+        this.category = aCategory;
+    }
     public void setNew(Boolean aNew) {
         isNew = aNew;
     }
 
+    //constructors
     public MenuItem(Double price, String description, String category, Boolean isNew) {
         this.price = price;
         this.description = description;
@@ -42,11 +43,7 @@ public class MenuItem {
         this.isNew = isNew;
     }
 
-    private Double price;
-    private String description;
-    private String category;
-    private Boolean isNew;
-
+    //overrides
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -54,12 +51,6 @@ public class MenuItem {
         MenuItem menuItem = (MenuItem) o;
         return description.equals(menuItem.description);
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(price, description, category, isNew);
-    }
-
     @Override
     public String toString() {
         return "MenuItem:" +
